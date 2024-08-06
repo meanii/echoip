@@ -1,0 +1,17 @@
+services:
+  echoip:
+    build: .
+    entrypoint: [
+      "/opt/echoip/echoip", 
+      "-f", "/opt/echoip/mmdb/GeoLite2-Country.mmdb",
+      "-c", "/opt/echoip/mmdb/GeoLite2-City.mmdb",
+      "-a", "/opt/echoip/mmdb/GeoLite2-ASN.mmdb"
+      ]
+
+    ports:
+      - "8081:8080"
+
+    volumes:
+      - ./mmdb:/opt/echoip/mmdb
+    
+    restart: unless-stopped
