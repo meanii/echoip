@@ -5,7 +5,8 @@ services:
       "/opt/echoip/echoip", 
       "-f", "/opt/echoip/mmdb/GeoLite2-Country.mmdb",
       "-c", "/opt/echoip/mmdb/GeoLite2-City.mmdb",
-      "-a", "/opt/echoip/mmdb/GeoLite2-ASN.mmdb"
+      "-a", "/opt/echoip/mmdb/GeoLite2-ASN.mmdb",
+      "-H", "X-Real-IP"
       ]
 
     ports:
